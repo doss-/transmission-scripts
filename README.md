@@ -1,12 +1,9 @@
 # Install
 
-chmod +x $(pwd)/add-torrent.sh
-# ln -s $(pwd)/add-torrent.sh ~/.local/bin/add-torrent # TODO: nested source works weird
-alias test="$(pwd)/add-torrent.sh"
- 
+bash install.sh 
 
 # Usage
-add-torrent:
+addtorrent:
   - by default assumes .torrent file in ~/Downloads
   - gets full path to a .torrent file
     E.g.:

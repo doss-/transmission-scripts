@@ -7,10 +7,11 @@
 #   [[ $SOURCE != /* ]] && SOURCE=$DIR/$SOURCE # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 # done
 # DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+# ABOVE DIDN'T WORK^^^ tried to make it symlink in ~/.local/bin dir
+# reworked to be alias
 
 DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-echo $DIR
 cd $DIR
 
 FILE_NAME=$1
@@ -23,9 +24,7 @@ if [ ! -e $FILE_NAME ]; then
   exit 1
 fi
 
-echo "$(pwd)"
 source ./setup.sh
 
 echo "Adding: $FILE_NAME"
-echo "$(pwd)"
 python3 main.py $FILE_NAME

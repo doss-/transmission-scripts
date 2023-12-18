@@ -10,7 +10,6 @@ if [ ! -d ./.venv ]; then
   source .venv/bin/activate
   pip install -r ./requirements.txt
 else
-  echo ".venv exists"
   # https://stackoverflow.com/questions/33400269/nested-source-commands-in-my-bash-script
   #PATH=$(pwd)/.venv/bin:$PATH source activate
   source .venv/bin/activate
