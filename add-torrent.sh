@@ -18,7 +18,7 @@ FILE_NAME=$1
 if [ -z "$FILE_NAME" ]; then
   FILE_NAME=$(ls -tr ~/Downloads/*.torrent | tail -1)
 fi
-if [ ! -e $FILE_NAME ]; then
+if [ ! -e "$FILE_NAME" ]; then
   echo "No such file!! $FILE_NAME"
   echo "Profide full path to .torrent file"
   exit 1
@@ -27,4 +27,4 @@ fi
 source ./setup.sh
 
 echo "Adding: $FILE_NAME"
-python3 main.py $FILE_NAME
+python3 main.py "$FILE_NAME"
